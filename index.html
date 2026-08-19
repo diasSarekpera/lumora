@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+     <head>
+          <!-- ===================== MÉTADONNÉES DE BASE ===================== -->
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="robots" content="index, follow" />
+        
+          <!-- TITRE STRATÉGIQUE POUR SEO -->
+          <title>Lumora | Caravane de luxe Romotow T8 - Design, confort & autonomie</title>
+        
+          <!-- MÉTA DESCRIPTION (SEO) -->
+          <meta name="description" content="Découvrez Lumora et la Romotow T8, la caravane de luxe qui réinvente vos voyages : design élégant, autonomie solaire, confort sur mesure. Demandez votre offre dès aujourd'hui !" />
+        
+          <!-- MOTS-CLÉS (optionnel) -->
+          <meta name="keywords" content="caravane de luxe, Romotow T8, camping-car haut de gamme, voyage autonome, Lumora, vanlife, autonomie solaire, confort de voyage" />
+        
+          <!-- LANGUE ET LOCALISATION -->
+          <meta name="language" content="fr" />
+          <meta name="geo.region" content="FR" />
+          <meta name="geo.placename" content="Marseille, France" />
+        
+          <!-- CANONICAL URL -->
+          <link rel="canonical" href="https://www.la-romotow-t8.org/" />
+        
+          <!-- ===================== PERFORMANCE (préconnect en premier) ===================== -->
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+          <!-- ===================== RÉSEAUX SOCIAUX / OPEN GRAPH ===================== -->
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Lumora" />
+          <meta property="og:title" content="Lumora | Caravane de luxe Romotow T8" />
+          <meta property="og:description" content="Voyagez autrement avec la Romotow T8 : design luxueux, autonomie solaire et confort total. Lumora réinvente votre manière de voyager." />
+          <meta property="og:image" content="https://www.la-romotow-t8.org/assets/Pictures/RomotowT8/img5.jpeg" />
+          <meta property="og:url" content="https://www.la-romotow-t8.org/" />
+          <meta property="og:locale" content="fr_FR" />
+        
+          <!-- ===================== TWITTER CARD ===================== -->
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Lumora | Caravane de luxe Romotow T8" />
+          <meta name="twitter:description" content="Design haut de gamme, confort et autonomie : découvrez la Romotow T8 et demandez votre offre personnalisée." />
+          <meta name="twitter:image" content="https://www.la-romotow-t8.org/assets/Pictures/RomotowT8/img5.jpeg" />
+        
+          <!-- ===================== FAVICON & MANIFEST ===================== -->
+          <link rel="shortcut icon" href="./assets/logo/favicon.ico" type="image/x-icon" />
+          <link rel="apple-touch-icon" href="./assets/logo/apple-touch-icon.png" />
+          <link rel="manifest" href="./manifest.json" />
+        
+          <!-- Préchargement de l'image de fond du hero : c'est le plus
+               grand élément visible au premier écran (LCP probable),
+               autant lancer sa récupération avant même le CSS. -->
+          <link rel="preload" as="image" href="./assets/Pictures/banner.png" fetchpriority="high" />
+
+          <!-- ===================== FONTS ===================== -->
+          <!-- Titres : Marcellus (conservée, identique à la police du logo) -->
+          <!-- Texte courant : Jost, pour une meilleure lisibilité -->
+          <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        
+          <!-- ===================== CSS =====================
+               Chargés en liens directs plutôt qu'en chaîne @import :
+               le navigateur peut lancer les 11 requêtes en parallèle
+               dès la lecture du <head>, au lieu de les découvrir une
+               par une (chaque @import ne se déclenche qu'une fois le
+               fichier précédent téléchargé et interprété). -->
+          <link rel="stylesheet" href="./styles/reset.css" />
+          <link rel="stylesheet" href="./styles/base.css" />
+          <link rel="stylesheet" href="./styles/layout.css" />
+          <link rel="stylesheet" href="./styles/hero.css" />
+          <link rel="stylesheet" href="./styles/about.css" />
+          <link rel="stylesheet" href="./styles/desc.css" />
+          <link rel="stylesheet" href="./styles/galerie.css" />
+          <link rel="stylesheet" href="./styles/temoignages.css" />
+          <link rel="stylesheet" href="./styles/contact.css" />
+          <link rel="stylesheet" href="./styles/prefooter.css" />
+          <link rel="stylesheet" href="./styles/footer.css" />
+          <link rel="stylesheet" href="./styles/animation.css" />
+
+          <!-- Si JavaScript est indisponible, l'IntersectionObserver qui
+               révèle les sections (voir main.js) ne s'exécute jamais :
+               on force alors leur affichage pour ne jamais bloquer le
+               contenu derrière une animation qui n'arrivera pas. -->
+          <noscript>
+               <style>
+                    .section-animated,
+                    .about-features li,
+                    .desc-row,
+                    .galerie-image,
+                    .temoignage-card {
+                         opacity: 1 !important;
+                         transform: none !important;
+                    }
+               </style>
+          </noscript>
+        
+          <!-- ===================== JSON-LD STRUCTURED DATA ===================== -->
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Romotow T8",
+            "image": "https://www.la-romotow-t8.org/assets/Pictures/RomotowT8/img5.jpeg",
+            "description": "Caravane de luxe avec design rotatif unique, autonomie solaire et confort haut de gamme.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Lumora"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://www.la-romotow-t8.org/",
+              "priceCurrency": "EUR",
+              "price": "188000",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+          </script>
+     </head>        
+     <body>
+          <!--==== SECTION HERO ====-->
+          <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
+               <header role="banner">
+                    <nav class="bar-navigation" role="navigation" aria-label="Navigation principale">
+                         <div class="nav-links nav-links-left desktop-menu">
+                              <ul role="list">
+                                   <li><a href="#hero">Accueil</a></li>
+                                   <li><a href="#about">À propos</a></li>
+                              </ul>
+                         </div>
+                         <div class="brand">
+                              <p class="brand-name">Lumora</p>
+                         </div>
+                         <div class="nav-links nav-links-right desktop-menu">
+                              <ul role="list">
+                                   <li><a href="#description">Caractéristiques</a></li>
+                                   <li><a href="#galerie">Galerie</a></li>
+                                   <li><a href="#contact">Contact</a></li>
+                              </ul>
+                         </div>
+                         <div class="mobile-menu" aria-label="Menu mobile">
+                              <button type="button" class="menu-btn btns" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-list">
+                                   <span class="burger-bar burger-bar--1"></span>
+                                   <span class="burger-bar burger-bar--2"></span>
+                                   <span class="burger-bar burger-bar--3"></span>
+                              </button>
+                              <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+                                   <ul id="menu-list" role="list">
+                                        <li><a href="#hero">Accueil</a></li>
+                                        <li><a href="#about">À propos</a></li>
+                                        <li><a href="#description">Caractéristiques</a></li>
+                                        <li><a href="#galerie">Galerie</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </nav>
+               </header>
+     
+               <div class="hero-content">
+                    <p class="hero-eyebrow">
+                         <span class="hero-eyebrow-rule" aria-hidden="true"></span>
+                         Modèle phare — édition 2026
+                    </p>
+                    <div class="hero-content-title">
+                         <h1 id="hero-title">L'évasion réinventée</h1>
+                    </div>
+                    <div class="hero-content-infos" aria-label="Informations du modèle">
+                         <div class="hero-spec">
+                              <span class="hero-spec-label">Modèle</span>
+                              <span class="hero-spec-value">Romotow T8</span>
+                         </div>
+                         <span class="hero-spec-divider" aria-hidden="true"></span>
+                         <div class="hero-spec">
+                              <span class="hero-spec-label">À partir de</span>
+                              <span class="hero-spec-value">188 000 €</span>
+                         </div>
+                    </div>
+                    <div class="hero-cta">
+                         <a href="https://wa.me/33759226451?text=Bonjour%20je%20suis%20intéressé%20par%20votre%20caravane" target="_blank" class="btn-whatsapp hero-btn btns" role="button" aria-label="Demander une offre personnalisée">Demander une offre</a>
+                         <a href="#about" class="hero-btn-outline btns" role="button" aria-label="Découvrir la caravane Romotow T8">Découvrir</a>
+                    </div>
+               </div>
+
+               <a href="#about" class="hero-scroll-cue" aria-label="Découvrir la suite">
+                    <span class="hero-scroll-cue-track" aria-hidden="true"></span>
+               </a>
+          </section>
+          <div class="main-wrapper">
+               <main>
+                    <!--==== SECTION À PROPOS ====-->
+                    <section id="about" class="about section-animated" role="region" aria-labelledby="about-title">
+                         <div class="about-left-content">
+                              <figure class="about-media">
+                                   <video controls preload="metadata" poster="./assets/Pictures/RomotowT8/img11.jpeg" width="100%" aria-label="Vidéo intérieure Romotow T8">
+                                        <source src="https://res.cloudinary.com/dxixqdrpm/video/upload/v1750868836/Romotow-interior_hlkp2c.mp4" type="video/mp4">
+                                        La vidéo ne peut pas être lue. Veuillez mettre à jour votre navigateur
+                                   </video>
+                                   <figcaption class="about-media-caption">Design intérieur haut de gamme</figcaption>
+                              </figure>
+                         
+                              <ul class="about-features" role="list" aria-label="Principales caractéristiques visuelles">
+                                   <li><img src="./assets/icons/icon-cuisine.svg" alt=""/> Cuisine équipée</li>
+                                   <li><img src="./assets/icons/icon-douche.svg" alt="" /> Douche à l'italienne</li>
+                                   <li><img src="./assets/icons/icon-lit.svg"  alt=""/> Lit double ou 2 lits simples</li>
+                                   <li><img src="./assets/icons/icon-solaire.svg" alt="" /> Autonomie solaire</li>
+                              </ul>
+                         </div>
+
+                         <div class="about-divider" aria-hidden="true"></div>
+                    
+                         <div class="about-right-content">
+                              <p class="about-eyebrow">À propos de Lumora</p>
+                              <h2 id="about-title" class="about-right-title">L'excellence d'un chez-soi, même sur la route</h2>
+
+                              <p class="about-lead">
+                                   Une nouvelle manière de voyager, entre luxe, confort et liberté — pensée pour celles et ceux
+                                   qui veulent explorer sans renoncer au confort d'un chez-soi.
+                              </p>
+
+                              <div class="about-body">
+                                   <p>
+                                        Notre modèle phare, la Romotow T8, réunit une cuisine équipée, une salle de bains avec
+                                        douche à l'italienne et une chambre modulable en lit double ou deux lits simples.
+                                   </p>
+                                   <p>
+                                        Une batterie lithium haute performance et des panneaux solaires intégrés garantissent
+                                        une autonomie durable, où que la route vous mène.
+                                   </p>
+                              </div>
+
+                              <div class="about-options">
+                                   <span class="about-options-label">Personnalisable avec</span>
+                                   <ul class="about-options-list" role="list">
+                                        <li>Téléviseurs muraux</li>
+                                        <li>Projecteur extérieur</li>
+                                        <li>Électroménager dernière génération</li>
+                                        <li>Récupération des eaux de pluie</li>
+                                   </ul>
+                              </div>
+
+                              <div class="about-price-card">
+                                   <div class="about-price-info">
+                                        <span class="about-price-label">Prix de départ</span>
+                                        <span class="about-price-value">188 000 €</span>
+                                   </div>
+                                   <p class="about-price-note">Paiement en plusieurs tranches ou acompte personnalisé.</p>
+                              </div>
+
+                              <a href="https://wa.me/33759226451?text=Bonjour%20je%20suis%20intéressé%20par%20votre%20caravane" class="about-btn btns" role="button" aria-label="Demander une offre depuis À propos">
+                                   <svg class="btn-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.08L2 22l5.06-1.33A9.94 9.94 0 0012.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm5.87 14.13c-.25.7-1.45 1.34-2 1.43-.53.09-1.05.24-3.5-.73-2.95-1.17-4.85-4.15-5-4.35-.15-.2-1.2-1.6-1.2-3.05 0-1.45.77-2.16 1.04-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.86 2.08.93 2.23.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.3.4-.44.53-.15.15-.3.3-.13.6.17.3.76 1.28 1.64 2.07 1.13 1.02 2.08 1.34 2.38 1.49.3.15.48.13.65-.08.18-.2.75-.87.96-1.17.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.07.13.07.75-.18 1.45z"/>
+                                   </svg>
+                                   Demander une offre
+                              </a>
+                         </div>
+                    </section> 
+                    <!--==== SECTION POURQUOI CHOISIR LUMORA ====-->
+                    <!--==== SECTION CARACTÉRISTIQUES ====-->
+                    <section id="description" class="description section-animated" role="region" aria-labelledby="description-title">
+                         <div class="description-title">
+                              <h2 id="description-title">Caractéristiques</h2>
+                         </div>
+                    
+                         <div class="description-content" role="list" aria-label="Liste des caractéristiques techniques">
+                              <!-- 1 -->
+                              <article class="desc-row" role="listitem">
+                                   <span class="desc-index" aria-hidden="true">01</span>
+                                   <div class="desc-row-body">
+                                        <h3>Module pivotant exclusif</h3>
+                                        <p>Un système unique qui déploie votre espace extérieur comme une terrasse en quelques secondes.</p>
+                                   </div>
+                              </article>
+
+                              <!-- 2 -->
+                              <article class="desc-row" role="listitem">
+                                   <span class="desc-index" aria-hidden="true">02</span>
+                                   <div class="desc-row-body">
+                                        <h3>Design intérieur contemporain</h3>
+                                        <p>Des matériaux nobles, une ergonomie pensée pour le confort et un style moderne dans chaque recoin.</p>
+                                   </div>
+                              </article>
+
+                              <!-- 3 -->
+                              <article class="desc-row" role="listitem">
+                                   <span class="desc-index" aria-hidden="true">03</span>
+                                   <div class="desc-row-body">
+                                        <h3>Espace généreux et modulable</h3>
+                                        <p>Lit double ou deux simples, cuisine complète, salle de bain : tout s'adapte à votre mode de vie.</p>
+                                   </div>
+                              </article>
+
+                              <!-- 4 -->
+                              <article class="desc-row" role="listitem">
+                                   <span class="desc-index" aria-hidden="true">04</span>
+                                   <div class="desc-row-body">
+                                        <h3>Autonomie énergétique</h3>
+                                        <p>Batterie lithium haute capacité alimentée par des panneaux solaires pour voyager sans contrainte.</p>
+                                   </div>
+                              </article>
+                         </div>
+                    </section>
+                    <!--==== SECTION GALERIE ====-->
+                    <section id="galerie" class="galerie section-animated" role="region" aria-labelledby="galerie-title">
+                         <div class="galerie-title">
+                              <h2 id="galerie-title">Galerie</h2>
+                         </div>
+                    
+                         <div class="galerie-content" role="group" aria-label="Galerie photos de la Romotow T8">
+                              <!-- Image 1 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img1.jpeg" alt="Vue extérieure de la Romotow T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+                         
+                              <!-- Image 2 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img2.jpeg" alt="Vue de la terrasse la Romotow T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+                         
+                              <!-- Image 3 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img3.jpeg" alt="Superbe vue nocturne de la Romotow T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+                         
+                              <!-- Image 4 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img4.jpeg" alt="Présentation de la Romotow T8 sous un angle différent" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+                         
+                              <!-- Image 5 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img5.jpeg" alt="Romotow T8 déployée en nature" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+
+                              <!-- Image 6 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img6.jpeg" alt="Romotow T8 vue de l'interieur nocturne" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+
+                              <!-- Image 7 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img7.jpeg" alt="Vue de la terrasse donnant sur les arbre, Romotow T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+
+                              <!-- Image 8 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img8.jpeg" alt="Superbe lit à deux place intégrés dans la Romotow  T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+                              
+                              <!-- Image 9 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img9.jpeg" alt="Romotow T8, avec une terrasse hors norme" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+
+                              <!-- Image 10 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img10.jpeg" alt="Romotow T8 vue par la fenètre" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>
+
+                              <!-- Image 11 -->
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img11.jpeg" alt="Romotow T8 vue de l'intérieur sur le sofa" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>                             
+                                                            
+                              <!-- Image 12 
+                              <figure class="galerie-image" role="button" tabindex="0" aria-label="Agrandir l'image">
+                                   <img src="./assets/Pictures/RomotowT8/img12.jpeg" alt="Mini douche intégrés Romotow T8" loading="lazy" decoding="async" />
+                              <span class="galerie-zoom-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.6"/>
+                                             <line x1="15.3" y1="15.3" x2="21" y2="21" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="1.6" stroke-linecap="round"/>
+                                             <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                   </span>
+                              </figure>-->
+                         </div>
+                    </section>
+                    <!--==== SECTION TÉMOIGNAGES ====-->
+                    <section id="temoignages" class="temoignages section-animated" role="region" aria-labelledby="temoignages-title">
+                         <div class="temoignages-first-content">
+                              <h2 id="temoignages-title">Ce qu'ils pensent de Lumora</h2>
+                         </div>
+                    
+                         <div class="temoignages-second-content" role="list" aria-label="Témoignages clients">
+                              <!-- Témoignage 1 -->
+                              <article class="temoignage-card" role="listitem">
+                                   <span class="tmg-quote-mark" aria-hidden="true">&rdquo;</span>
+                                   <blockquote class="tmg-comments">
+                                        <p>La Romotow T8 a transformé nos escapades en véritables séjours de luxe. Confort et liberté totale.</p>
+                                   </blockquote>
+                                   <div class="tmg-footer">
+                                        <img src="./assets/Pictures/Avatar/Jean.jpg" alt="Portrait de Jean, client français" class="tmg-profil-images" loading="lazy" decoding="async" />
+                                        <div class="tmg-footer-infos">
+                                             <p class="tmg-infos-name">Jean Dupont <span>France</span></p>
+                                             <p class="tmg-info-stars">★★★★★</p>
+                                        </div>
+                                   </div>
+                              </article>
+                         
+                              <!-- Témoignage 2 -->
+                              <article class="temoignage-card" role="listitem">
+                                   <span class="tmg-quote-mark" aria-hidden="true">&rdquo;</span>
+                                   <blockquote class="tmg-comments">
+                                        <p>Un bijou d'ingéniosité. On se sent chez soi partout. Lumora a redéfini notre manière de voyager.</p>
+                                   </blockquote>
+                                   <div class="tmg-footer">
+                                        <img src="./assets/Pictures/Avatar/Sarah.jpg" alt="Portrait de Sarah, cliente américaine" class="tmg-profil-images" loading="lazy" decoding="async" />
+                                        <div class="tmg-footer-infos">
+                                             <p class="tmg-infos-name">Sarah Miles <span>USA</span></p>
+                                             <p class="tmg-info-stars">★★★★★</p>
+                                        </div>
+                                   </div>
+                              </article>
+                         
+                              <!-- Témoignage 3 -->
+                              <article class="temoignage-card" role="listitem">
+                                   <span class="tmg-quote-mark" aria-hidden="true">&rdquo;</span>
+                                   <blockquote class="tmg-comments">
+                                        <p>Design impressionnant, autonomie bluffante. Le service client est exceptionnel. Je recommande vivement.</p>
+                                   </blockquote>
+                                   <div class="tmg-footer">
+                                        <img src="./assets/Pictures/Avatar/Luc.jpg" alt="Portrait de Luc, client belge" class="tmg-profil-images" loading="lazy" decoding="async" />
+                                        <div class="tmg-footer-infos">
+                                             <p class="tmg-infos-name">Luc Vermeer <span>Belgique</span></p>
+                                             <p class="tmg-info-stars">★★★★☆</p>
+                                        </div>
+                                   </div>
+                              </article>
+                         </div>
+                         <p class="tmg-scroll-hint">— Faites glisser pour découvrir plus de témoignages —</p>
+                    </section>
+                    <!--==== SECTION CONTACT ====-->
+                    <section id="contact" class="contact section-animated" role="region" aria-labelledby="contact-title">
+                         <div class="contact-second-block">
+                              <!-- Coordonnées -->
+                              <div class="contact-second-block-left">
+                                   <span class="contact-eyebrow">Contactez-nous</span>
+                                   <h2 id="contact-title">Une question, un besoin<br /><em>de soutien&nbsp;?</em></h2>
+                                   <p class="contact-intro">Notre équipe reste disponible pour vous écouter, vous accompagner et répondre à toutes vos questions concernant la Romotow T8.</p>
+
+                                   <address>
+                                        <p class="lumora-email">
+                                             <span class="contact-icon" aria-hidden="true">
+                                                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/>
+                                                       <path d="M4 6.5l8 6 8-6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </span>
+                                             <span><strong>Email</strong>laromotowt8@gmail.com</span>
+                                        </p>
+                                        <p class="lumora-tel">
+                                             <span class="contact-icon" aria-hidden="true">
+                                                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M7.2 3.8c.4-.1.8.1 1 .5l1.4 2.9c.2.4.1.9-.2 1.2L8 9.8c-.3.3-.4.8-.2 1.2 1 2 2.6 3.6 4.6 4.6.4.2.9.1 1.2-.2l1.4-1.4c.3-.3.8-.4 1.2-.2l2.9 1.4c.4.2.6.6.5 1v2c0 .9-.8 1.6-1.7 1.5-4-.4-7.8-2.2-10.6-5-2.8-2.8-4.6-6.6-5-10.6C2.2 4.8 2.9 4 3.8 4h2z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </span>
+                                             <span><strong>Téléphone</strong>+33 466 05 85 88</span>
+                                        </p>
+                                        <p class="lumora-adresse">
+                                             <span class="contact-icon" aria-hidden="true">
+                                                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M12 21s-6.5-5.6-6.5-11A6.5 6.5 0 0112 3.5a6.5 6.5 0 016.5 6.5c0 5.4-6.5 11-6.5 11z" stroke-width="1.5" stroke-linejoin="round"/>
+                                                       <circle cx="12" cy="10.2" r="2.2" stroke-width="1.5"/>
+                                                  </svg>
+                                             </span>
+                                             <span><strong>Atelier</strong>Marseille, France</span>
+                                        </p>
+                                        <p class="lumora-dispo">
+                                             <span class="contact-icon" aria-hidden="true">
+                                                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <circle cx="12" cy="12" r="8.25" stroke-width="1.5"/>
+                                                       <path d="M12 7.5V12l3 2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </span>
+                                             <span><strong>Disponibilité</strong>Lun – Ven, 9h00 – 18h00</span>
+                                        </p>
+                                   </address>
+                              </div>
+
+                              <!-- Formulaire de contact -->
+                              <div class="contact-second-block-right">
+                                   <h3>Envoyez-nous un message</h3>
+                                   <p class="form-helper">Tous les champs marqués <span>*</span> sont obligatoires.</p>
+
+                                   <form action="#" method="post" aria-label="Formulaire de contact" id="form">
+                                        <div class="form-grid">
+                                             <div class="form-wrapper">
+                                                  <label for="name">Nom complet <span>*</span></label>
+                                                  <input type="text" id="name" name="name" required aria-required="true" placeholder="Ex. Camille Moreau"/>
+                                             </div>
+                                             <div class="form-wrapper">
+                                                  <label for="tel">Téléphone <span>*</span></label>
+                                                  <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" required aria-required="true"/>
+                                             </div>
+                                             <div class="form-wrapper">
+                                                  <label for="email">Adresse email <span>*</span></label>
+                                                  <input type="email" id="email" name="email" required aria-required="true" placeholder="votre@email.com"/>
+                                             </div>
+                                             <div class="form-wrapper">
+                                                  <label for="subject">Sujet <span>*</span></label>
+                                                  <select id="subject" name="subject" required aria-required="true">
+                                                       <option value="" selected disabled>Choisir un sujet</option>
+                                                       <option value="offre">Demande d'offre</option>
+                                                       <option value="infos">Demande d'informations</option>
+                                                       <option value="essai">Demande d'essai</option>
+                                                       <option value="autre">Autre demande</option>
+                                                  </select>
+                                             </div>
+                                        </div>
+
+                                        <div class="form-wrapper form-wrapper--full">
+                                             <label for="message">Votre message <span>*</span></label>
+                                             <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Décrivez votre demande..."></textarea>
+                                        </div>
+
+                                        <div class="form-consent">
+                                             <input type="checkbox" id="consent" name="consent" required aria-required="true"/>
+                                             <label for="consent">J'accepte que mes données soient utilisées pour traiter ma demande, conformément à notre politique de confidentialité.</label>
+                                        </div>
+
+                                        <div class="form-submit-row">
+                                             <button type="submit" id="contact-btn" class="contact-btn btns" aria-label="Envoyer le message" value="Send Email">Envoyer le message</button>
+                                             <span class="form-note">Vos informations sont strictement confidentielles.</span>
+                                        </div>
+                                   </form>
+                              </div>
+                         </div>
+                    </section>
+                    <!--==== SECTION PRÉ-FOOTER ====-->
+                    <section class="pre-footer section-animated" role="region" aria-labelledby="prefooter-title">
+                         <h2 id="prefooter-title">Prêt à vivre l'expérience Lumora ?</h2>
+                         <p>Recevez une offre personnalisée et entrez dans une nouvelle ère du voyage.</p>
+                         <a href="https://wa.me/33759226451?text=Bonjour%20je%20suis%20intéressé%20par%20votre%20caravane" class="btn-prefooter btns" role="button" aria-label="Demander une offre sur WhatsApp">
+                              <svg class="btn-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                   <path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.08L2 22l5.06-1.33A9.94 9.94 0 0012.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm5.87 14.13c-.25.7-1.45 1.34-2 1.43-.53.09-1.05.24-3.5-.73-2.95-1.17-4.85-4.15-5-4.35-.15-.2-1.2-1.6-1.2-3.05 0-1.45.77-2.16 1.04-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.86 2.08.93 2.23.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.3.4-.44.53-.15.15-.3.3-.13.6.17.3.76 1.28 1.64 2.07 1.13 1.02 2.08 1.34 2.38 1.49.3.15.48.13.65-.08.18-.2.75-.87.96-1.17.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.07.13.07.75-.18 1.45z"/>
+                              </svg>
+                              Demander une offre
+                         </a>
+                    </section>
+               </main>
+               <!--==== PIED DE PAGE ====-->
+               <footer class="footer section-animated" role="contentinfo" aria-label="Pied de page du site">
+                    <div class="footer-top">
+                         <div class="footer-brand-wrapper">
+                              <p class="footer-brand-name">Lumora</p>
+                              <p>Le voyage, réinventé.</p>
+                         </div>
+
+                         <nav class="footer-nav" aria-label="Liens utiles">
+                              <a href="#hero">Accueil</a>
+                              <a href="#about">À propos</a>
+                              <a href="#description">Caractéristiques</a>
+                              <a href="#galerie">Galerie</a>
+                              <a href="#contact">Contact</a>
+                         </nav>
+                    </div>
+
+                    <div class="footer-divider" role="presentation"></div>
+
+                    <div class="footer-bottom">
+                         <p class="footer-copyright">© 2025 Lumora. Tous droits réservés.</p>
+                         <address class="footer-contact-inline">
+                              <a href="mailto:laromotowt8@gmail.com">laromotowt8@gmail.com</a>
+                              <span aria-hidden="true">•</span>
+                              <a href="tel:+33466058588">+33 466 05 85 88</a>
+                         </address>
+                    </div>
+               </footer>
+          </div>
+
+          <!-- ===================== LIGHTBOX GALERIE ===================== -->
+          <div class="lightbox" id="lightbox" aria-hidden="true">
+               <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fermer l'aperçu">&times;</button>
+               <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+          </div>
+
+          <script type="text/javascript"
+               src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+          </script>
+        
+          <script type="text/javascript">
+               emailjs.init('HIQy3d809gRGi811_')
+          </script>
+        
+        <script type="module" src="./scripts/main.js"></script>
+        <script type="module" src="./scripts/galerie-lightbox.js"></script>
+        <script type="module" src="./scripts/burger-menu.js"></script>
+     </body>
+</html>
+   

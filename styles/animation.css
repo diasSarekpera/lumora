@@ -1,0 +1,43 @@
+/* =====================================================
+   RÉVÉLATION AU SCROLL — langage de mouvement partagé
+   =====================================================
+   Chaque section (et certains de ses éléments internes, voir
+   about.css / desc.css / galerie.css / temoignages.css) commence
+   légèrement décalée et transparente, puis se met en place dès
+   qu'elle entre dans le viewport (voir main.js, IntersectionObserver).
+   Le déplacement est volontairement modéré : assez pour être perçu,
+   jamais assez pour distraire de la lecture. */
+
+.section-animated {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-reveal, 550ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--dur-reveal, 550ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+  will-change: opacity, transform;
+}
+
+/* Classe active une fois visible */
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Une fois l'animation d'entrée terminée, on relâche will-change :
+   il ne sert plus à rien de réserver des ressources GPU pour un
+   élément qui ne bougera plus. */
+.section-visible {
+  will-change: auto;
+}
+
+/* Les personnes ayant demandé une réduction des animations système
+   voient le contenu apparaître directement, sans translation ni
+   fondu progressif — jamais de contenu cliquable qui reste invisible
+   trop longtemps. */
+@media (prefers-reduced-motion: reduce) {
+  .section-animated {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

@@ -1,0 +1,262 @@
+/*=========================================
+     SECTION TÉMOIGNAGES – CARROUSEL
+=========================================*/
+
+.temoignages {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 2.5rem;
+     font-family: var(--font-text);
+}
+
+/* ==== Titre de section ==== */
+.temoignages-first-content {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+     text-align: center;
+     width: 100%;
+}
+
+.temoignages-first-content h2 {
+     font-size: clamp(1.6rem, 5vw, 2.4rem);
+     font-family: var(--font-heading);
+     color: var(--color-white);
+     text-transform: uppercase;
+     font-weight: 500;
+}
+
+.temoignages-first-content p {
+     font-size: clamp(1rem, 2.5vw, 1.3rem);
+     color: var(--color-gold);
+     font-style: italic;
+     font-weight: 400;
+}
+
+/* ==== Carrousel horizontal ==== */
+.temoignages-second-content {
+     --edge-fade: 2.5rem;
+     display: flex;
+     align-items: stretch;
+     gap: 1.75rem;
+     width: 100%;
+     max-width: 100%;
+     overflow-x: auto;
+     scroll-snap-type: x mandatory;
+     scroll-padding-inline: 2rem;
+     padding: 0.5rem 2rem 1.5rem;
+     -ms-overflow-style: none;
+     scrollbar-width: none;
+     /* Fondu sur les bords : signale qu'il y a d'autres cartes à
+        découvrir de ce côté, sans dépendre uniquement du texte
+        d'indication ci-dessous (voir .scroll-at-start / .scroll-at-end,
+        pilotées par main.js selon la position de scroll réelle). */
+     -webkit-mask-image: linear-gradient(to right,
+          transparent, black var(--edge-fade),
+          black calc(100% - var(--edge-fade)), transparent);
+     mask-image: linear-gradient(to right,
+          transparent, black var(--edge-fade),
+          black calc(100% - var(--edge-fade)), transparent);
+}
+
+.temoignages-second-content::-webkit-scrollbar {
+     display: none;
+}
+
+/* Au repos, tout est visible sur un bord donné : le fondu correspondant
+   disparaît pour ne pas laisser croire à du contenu tronqué. */
+.temoignages-second-content.scroll-at-start {
+     -webkit-mask-image: linear-gradient(to right,
+          black, black calc(100% - var(--edge-fade)), transparent);
+     mask-image: linear-gradient(to right,
+          black, black calc(100% - var(--edge-fade)), transparent);
+}
+
+.temoignages-second-content.scroll-at-end {
+     -webkit-mask-image: linear-gradient(to right,
+          transparent, black var(--edge-fade), black);
+     mask-image: linear-gradient(to right,
+          transparent, black var(--edge-fade), black);
+}
+
+.temoignages-second-content.scroll-at-start.scroll-at-end {
+     -webkit-mask-image: none;
+     mask-image: none;
+}
+
+.tmg-scroll-hint {
+     font-size: 0.8rem;
+     letter-spacing: 0.05rem;
+     color: #6f7271;
+     text-align: center;
+     transition: opacity var(--dur-reveal) var(--ease-out);
+}
+
+/* Une fois le dernier témoignage atteint, l'indication a rempli son
+   rôle : elle s'efface plutôt que de rester affichée inutilement. */
+.tmg-scroll-hint.scroll-hint-done {
+     opacity: 0;
+}
+
+/* ==== Carte témoignage ==== */
+.temoignage-card {
+     position: relative;
+     flex: 0 0 clamp(280px, 34vw, 380px);
+     scroll-snap-align: start;
+     background-color: rgba(255, 255, 255, 0.03);
+     border-radius: var(--radius-base);
+     border: 1px solid rgba(255, 255, 255, 0.08);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+     padding: 2.4rem 2rem 1.8rem;
+     display: flex;
+     flex-direction: column;
+     gap: 1.6rem;
+     transition: box-shadow var(--dur-hover) var(--ease-in-out),
+                 border-color var(--dur-hover) var(--ease-standard),
+                 opacity var(--dur-reveal) var(--ease-out),
+                 transform var(--dur-reveal) var(--ease-out);
+}
+
+.temoignage-card:hover {
+     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+     border-color: rgba(250, 204, 21, 0.3);
+}
+
+.tmg-quote-mark {
+     display: inline-block;
+     font-family: var(--font-heading);
+     font-size: 3.5rem;
+     line-height: 1;
+     color: var(--color-gold);
+     opacity: 0.5;
+     transition: transform 400ms var(--ease-out), opacity 400ms var(--ease-out);
+}
+
+.temoignage-card:hover .tmg-quote-mark {
+     transform: translateY(-5px) rotate(-6deg);
+     opacity: 0.85;
+}
+
+/* ==== Témoignage ==== */
+.tmg-comments {
+     flex-grow: 1;
+     text-align: left;
+     hyphens: auto;
+     font-family: var(--font-heading);
+     font-style: italic;
+     font-size: clamp(1.05rem, 2vw, 1.2rem);
+     line-height: 1.6;
+     font-weight: 400;
+     color: #ececec;
+}
+
+/* ==== Pied de carte : profil ==== */
+.tmg-footer {
+     display: flex;
+     align-items: center;
+     gap: 0.9rem;
+     padding-top: 1.4rem;
+     border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tmg-profil-images {
+     width: 46px;
+     height: 46px;
+     object-fit: cover;
+     border-radius: var(--radius-circle);
+     border: 2px solid var(--color-gold);
+     flex-shrink: 0;
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.temoignage-card:hover .tmg-profil-images{
+     transform: scale(1.08);
+}
+
+.tmg-footer-infos {
+     display: flex;
+     flex-direction: column;
+     gap: 0.2rem;
+}
+
+.tmg-infos-name {
+     font-weight: 500;
+     font-size: 0.95rem;
+     color: var(--color-white);
+}
+
+.tmg-infos-name span {
+     font-weight: 400;
+     color: var(--color-text-subtle);
+}
+
+.tmg-info-stars {
+     color: var(--color-gold);
+     font-size: 0.85rem;
+     letter-spacing: 0.15rem;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+     .temoignages-second-content {
+          padding: 0.5rem 1.2rem 1.5rem;
+          gap: 1.2rem;
+     }
+
+     .temoignage-card {
+          flex: 0 0 82vw;
+          padding: 2rem 1.5rem 1.5rem;
+     }
+}
+
+@media screen and (min-width: 900px) {
+     .tmg-scroll-hint {
+          display: none;
+     }
+}
+
+/* ===== Grand smartphone (576px) et en dessous =====
+   Une carte occupe (presque) tout l'écran à la fois : le regard se
+   concentre sur un témoignage à la fois, comme un vrai carrousel
+   mobile plutôt qu'un aperçu tronqué de plusieurs cartes. */
+@media screen and (max-width: 576px) {
+     .temoignages-second-content {
+          padding: 0.5rem 1rem 1.4rem;
+          scroll-padding-inline: 1rem;
+     }
+
+     .temoignage-card {
+          flex: 0 0 88vw;
+          padding: 1.8rem 1.4rem 1.4rem;
+     }
+
+     .tmg-quote-mark{
+          font-size: 2.8rem;
+     }
+}
+
+/* ===== Apparition en cascade — témoignages =====
+   Les trois cartes arrivent l'une après l'autre plutôt qu'ensemble,
+   comme si chaque client "prenait la parole" à son tour. */
+.temoignage-card {
+     opacity: 0;
+     transform: translateY(20px);
+}
+
+.temoignages.section-visible .temoignage-card {
+     opacity: 1;
+     transform: translateY(0);
+}
+
+.temoignages.section-visible .temoignage-card:nth-child(1) { transition-delay: 0s, 0s, 0.05s, 0.05s; }
+.temoignages.section-visible .temoignage-card:nth-child(2) { transition-delay: 0s, 0s, 0.15s, 0.15s; }
+.temoignages.section-visible .temoignage-card:nth-child(3) { transition-delay: 0s, 0s, 0.25s, 0.25s; }
+
+@media (prefers-reduced-motion: reduce){
+     .temoignage-card{
+          opacity: 1;
+          transform: none;
+     }
+}

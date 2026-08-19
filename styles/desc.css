@@ -1,0 +1,168 @@
+/*===============================
+     SECTION CARACTÉRISTIQUES
+===============================*/
+
+.description {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 3rem;
+     color: var(--color-text);
+     font-family: var(--font-text);
+}
+
+/* ===== TITRES ===== */
+.description-title {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     gap: 1rem;
+     max-width: 800px;
+}
+
+.description-title h2 {
+     font-size: clamp(1.6rem, 5vw, 2.4rem);
+     font-family: var(--font-heading);
+     color: var(--color-white);
+     text-transform: uppercase;
+     font-weight: 500;
+}
+
+.description-title p {
+     font-size: clamp(1rem, 2.5vw, 1.3rem);
+     color: var(--color-gold);
+     font-style: italic;
+     font-weight: 400;
+}
+
+/* ===== LISTE ÉDITORIALE ===== */
+.description-content {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     max-width: 900px;
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== LIGNE (CARACTÉRISTIQUE) ===== */
+.desc-row {
+     display: grid;
+     grid-template-columns: 90px 1fr;
+     align-items: start;
+     gap: 1.5rem;
+     padding: 2.2rem 0.5rem;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 opacity var(--dur-reveal) var(--ease-out),
+                 transform var(--dur-reveal) var(--ease-out);
+}
+
+.desc-row:hover {
+     background-color: rgba(255, 255, 255, 0.02);
+}
+
+.desc-index {
+     font-family: var(--font-heading);
+     font-size: clamp(1.8rem, 4vw, 2.6rem);
+     font-weight: 500;
+     line-height: 1;
+     color: rgba(250, 204, 21, 0.3);
+     transition: color var(--dur-hover) var(--ease-standard);
+}
+
+.desc-row:hover .desc-index {
+     color: var(--color-gold);
+}
+
+.desc-row-body {
+     display: flex;
+     flex-direction: column;
+     gap: 0.6rem;
+     padding-top: 0.3rem;
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.desc-row:hover .desc-row-body {
+     transform: translateX(8px);
+}
+
+.desc-row-body h3 {
+     font-family: var(--font-heading);
+     font-size: 1.3rem;
+     font-weight: 500;
+     color: var(--color-white);
+}
+
+.desc-row-body p {
+     font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+     font-weight: 400;
+     line-height: 1.7;
+     color: var(--color-text-muted);
+     max-width: 620px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+     .desc-row {
+          grid-template-columns: 52px 1fr;
+          gap: 1rem;
+          padding: 1.8rem 0.25rem;
+     }
+
+     .desc-index {
+          font-size: 1.5rem;
+     }
+
+     .desc-row-body h4 {
+          font-size: 1.1rem;
+     }
+
+     .desc-row:hover .desc-row-body {
+          transform: translateX(4px);
+     }
+}
+
+/* ===== Petit smartphone (≤375px) =====
+   Le numéro passe au-dessus du texte : à cette largeur, une colonne
+   dédiée au numéro grignote trop d'espace pour le corps de texte. */
+@media screen and (max-width: 375px) {
+     .desc-row {
+          grid-template-columns: 1fr;
+          gap: 0.4rem;
+          padding: 1.5rem 0;
+     }
+
+     .desc-index {
+          font-size: 1.3rem;
+     }
+
+     .desc-row-body {
+          padding-top: 0;
+     }
+}
+
+/* ===== Apparition en cascade — liste de caractéristiques =====
+   Chaque ligne arrive juste après la précédente : la lecture reste
+   guidée, comme un texte qui se dévoile au rythme du regard. */
+.desc-row {
+     opacity: 0;
+     transform: translateY(18px);
+}
+
+.description.section-visible .desc-row {
+     opacity: 1;
+     transform: translateY(0);
+}
+
+.description.section-visible .desc-row:nth-child(1) { transition-delay: 0s, 0.05s, 0.05s; }
+.description.section-visible .desc-row:nth-child(2) { transition-delay: 0s, 0.13s, 0.13s; }
+.description.section-visible .desc-row:nth-child(3) { transition-delay: 0s, 0.21s, 0.21s; }
+.description.section-visible .desc-row:nth-child(4) { transition-delay: 0s, 0.29s, 0.29s; }
+
+@media (prefers-reduced-motion: reduce){
+     .desc-row{
+          opacity: 1;
+          transform: none;
+     }
+}

@@ -1,0 +1,164 @@
+/* ============================
+        FOOTER — VERSION ÉPURÉE
+============================= */
+
+.footer {
+     background-color: var(--bg-deep);
+     color: var(--color-text);
+     padding: 3.5rem 2rem 2rem;
+     font-family: var(--font-text);
+     font-size: 0.95rem;
+     line-height: 1.6;
+     width: 100%;
+}
+
+.footer a {
+     text-decoration: none;
+     color: inherit;
+     transition: color var(--dur-hover) var(--ease-standard);
+}
+
+.footer a:hover {
+     color: var(--color-gold);
+}
+
+.footer-nav a{
+     position: relative;
+}
+
+.footer-nav a::after{
+     content: "";
+     position: absolute;
+     left: 0;
+     bottom: -3px;
+     width: 100%;
+     height: 1px;
+     background-color: var(--color-gold);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.footer-nav a:hover::after{
+     transform: scaleX(1);
+}
+
+/* ======== Ligne du haut : marque + navigation ======== */
+.footer-top {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     gap: 1.5rem 2rem;
+     max-width: 1200px;
+     margin: 0 auto;
+}
+
+.footer-brand-name {
+     font-family: var(--font-heading);
+     font-size: 1.3rem;
+     line-height: 1.25;
+     color: var(--color-white);
+     text-transform: uppercase;
+     font-weight: 500;
+     letter-spacing: 0.04rem;
+     margin-bottom: 0.3rem;
+}
+
+.footer-brand-wrapper p {
+     font-size: 0.9rem;
+     font-style: italic;
+     font-weight: 400;
+     color: var(--color-gold);
+}
+
+.footer-nav {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 0.5rem 1.8rem;
+}
+
+.footer-nav a {
+     font-size: 0.9rem;
+     color: var(--color-text);
+     letter-spacing: 0.02rem;
+}
+
+/* ======== Séparateur ======== */
+.footer-divider {
+     width: 100%;
+     max-width: 1200px;
+     height: 1px;
+     background-color: rgba(255, 255, 255, 0.08);
+     margin: 2.2rem auto;
+}
+
+/* ======== Ligne du bas : copyright + contact ======== */
+.footer-bottom {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     gap: 0.8rem 2rem;
+     max-width: 1200px;
+     margin: 0 auto;
+     font-size: 0.82rem;
+     color: var(--color-text-subtle);
+}
+
+.footer-copyright {
+     margin: 0;
+}
+
+.footer-contact-inline {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     font-style: normal;
+}
+
+.footer-contact-inline span {
+     color: #565958;
+}
+
+.footer-contact-inline a:hover {
+     color: var(--color-gold);
+}
+
+/* ======== Responsive ======== */
+@media screen and (max-width: 768px) {
+     .footer {
+          padding: 3rem 1.25rem 1.75rem;
+          text-align: center;
+     }
+
+     .footer-top,
+     .footer-bottom {
+          flex-direction: column;
+          justify-content: center;
+     }
+
+     .footer-nav {
+          justify-content: center;
+     }
+
+     .footer-divider {
+          margin: 1.8rem auto;
+     }
+}
+
+/* ===== Petit smartphone (≤430px) =====
+   L'adresse email et le téléphone passent l'un sous l'autre : côte
+   à côte, le séparateur "•" et les deux liens se retrouvaient trop
+   serrés pour un texte aussi petit. */
+@media screen and (max-width: 430px) {
+     .footer-contact-inline {
+          flex-direction: column;
+          gap: 0.3rem;
+     }
+
+     .footer-contact-inline span {
+          display: none;
+     }
+}

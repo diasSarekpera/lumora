@@ -1,0 +1,388 @@
+/*============================
+     SECTION ABOUT PRO
+=============================*/
+
+.about {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: flex-start;
+     gap: clamp(2rem, 1.4rem + 2.5vw, 3.5rem);
+     font-family: var(--font-text);
+}
+   
+.about-left-content,
+.about-right-content {
+     flex: 1 1 420px;
+     max-width: 560px;
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+}
+
+/* ===== Petit laptop / grande tablette (1024px – 900px) =====
+   La mise en page à deux colonnes tient encore, mais avec moins
+   d'air : on resserre l'écart et la largeur de chaque colonne pour
+   éviter un retour à la ligne prématuré et disgracieux. */
+@media screen and (max-width: 1180px) {
+     .about-left-content,
+     .about-right-content {
+          flex-basis: 380px;
+          max-width: 480px;
+     }
+}
+
+@media screen and (max-width: 992px) {
+     .about{
+          gap: 2.5rem;
+     }
+
+     .about-left-content,
+     .about-right-content {
+          flex-basis: 320px;
+          max-width: 440px;
+     }
+
+     .about-divider{
+          align-self: center;
+          height: 70%;
+     }
+}
+
+/* ===== Trait vertical séparant showcase et récit ===== */
+.about-divider {
+     flex: 0 0 auto;
+     align-self: stretch;
+     width: 1px;
+     background: linear-gradient(180deg, transparent, rgba(197, 143, 44, 0.35) 15%, rgba(197, 143, 44, 0.35) 85%, transparent);
+}
+   
+/* ===== Vidéo ===== */
+.about-left-content figure.about-media {
+     position: relative;
+     width: 100%;
+     display: block;
+}
+   
+.about-left-content figure video {
+     width: 100%;
+     border-radius: var(--radius-base);
+     object-fit: cover;
+     aspect-ratio: 1/1;
+     border: 1px solid rgba(197, 143, 44, 0.35);
+     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+     transition: box-shadow var(--dur-hover) var(--ease-in-out),
+                 transform var(--dur-hover) var(--ease-in-out);
+}
+
+.about-left-content figure.about-media:hover video {
+     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+     transform: translateY(-3px);
+}
+
+.about-media-caption {
+     margin-top: 0.8rem;
+     color: rgba(255, 255, 255, 0.55);
+     font-size: 0.85rem;
+     letter-spacing: 0.04em;
+     text-align: center;
+}
+   
+/* ===== Icônes caractéristiques ===== */
+.about-features {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 1.2rem;
+     list-style: none;
+     padding: 0;
+     font-size: 1rem;
+}
+   
+.about-features li {
+     display: flex;
+     align-items: center;
+     gap: 0.8rem;
+     color: var(--color-white);
+     background-color: rgba(255, 255, 255, 0.03);
+     padding: 0.6rem 1rem;
+     border-radius: var(--radius-base);
+     transition: background-color var(--dur-hover) var(--ease-standard);
+}
+   
+.about-features li:hover {
+     background-color: rgba(255, 255, 255, 0.07);
+}
+   
+.about-features li img {
+     width: 24px;
+     height: 24px;
+     filter: brightness(1.5);
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.about-features li:hover img{
+     transform: scale(1.12) rotate(-4deg);
+}
+   
+/* ===== Texte et titres ===== */
+.about-right-content{
+     gap: 1.3rem;
+}
+
+.about-eyebrow {
+     color: var(--color-gold-soft);
+     font-size: 0.78rem;
+     font-weight: 500;
+     letter-spacing: 0.28em;
+     text-transform: uppercase;
+}
+
+.about-right-title {
+     font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+     font-weight: 500;
+     text-align: left;
+     font-family: var(--font-heading);
+     color: var(--color-white);
+     max-width: 20ch;
+}
+
+.about-right-content p.about-lead {
+     color: var(--color-gold);
+     font-size: clamp(1rem, 1.6vw, 1.15rem);
+     font-style: italic;
+     font-weight: 400;
+     line-height: 1.7;
+     max-width: 46ch;
+}
+
+.about-body {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.about-right-content p {
+     font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+     font-weight: 400;
+     text-align: left;
+     line-height: 1.8;
+     hyphens: auto;
+}
+
+/* ===== Options personnalisables — pastilles ===== */
+.about-options {
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+}
+
+.about-options-label {
+     font-size: 0.78rem;
+     font-weight: 500;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     color: rgba(255, 255, 255, 0.55);
+}
+
+.about-options-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.6rem;
+     padding: 0;
+     list-style: none;
+}
+
+.about-options-list li {
+     font-size: 0.85rem;
+     color: var(--color-white);
+     background-color: rgba(255, 255, 255, 0.04);
+     border: 1px solid rgba(255, 255, 255, 0.12);
+     padding: 0.45rem 1rem;
+     border-radius: var(--radius-pill);
+     transition: border-color var(--dur-hover) var(--ease-standard),
+                 background-color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-out);
+}
+
+.about-options-list li:hover {
+     border-color: rgba(197, 143, 44, 0.5);
+     background-color: rgba(197, 143, 44, 0.08);
+     transform: translateY(-2px);
+}
+
+/* ===== Carte tarif ===== */
+.about-price-card {
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     border: 1px solid rgba(197, 143, 44, 0.3);
+     border-left: 3px solid var(--color-bronze);
+     background-color: rgba(255, 255, 255, 0.03);
+     padding: 1.2rem 1.5rem;
+     border-radius: var(--radius-base);
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 box-shadow var(--dur-hover) var(--ease-in-out);
+}
+
+.about-price-card:hover{
+     background-color: rgba(255, 255, 255, 0.05);
+     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.about-price-info {
+     display: flex;
+     align-items: baseline;
+     gap: 0.8rem;
+     flex-wrap: wrap;
+}
+
+.about-price-label {
+     font-size: 0.78rem;
+     font-weight: 500;
+     letter-spacing: 0.1em;
+     text-transform: uppercase;
+     color: rgba(255, 255, 255, 0.6);
+}
+
+.about-price-value {
+     font-family: var(--font-heading);
+     font-size: clamp(1.4rem, 3vw, 1.8rem);
+     color: var(--color-white);
+}
+
+.about-right-content p.about-price-note {
+     font-size: 0.88rem;
+     color: rgba(255, 255, 255, 0.6);
+     line-height: 1.5;
+}
+
+/* ===== Bouton ===== */
+.about-btn {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.6rem;
+     align-self: flex-start;
+     background-color: var(--color-green);
+     color: var(--color-white);
+     padding: 0.8rem 1.8rem;
+     border-radius: var(--radius-base);
+     font-weight: 500;
+     font-size: 1rem;
+     font-family: var(--font-text);
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-in-out),
+                 box-shadow var(--dur-hover) var(--ease-in-out);
+     text-decoration: none;
+}
+   
+.about-btn:hover {
+     background-color: var(--color-green-dark);
+     transform: translateY(-2px);
+     box-shadow: 0 6px 14px rgba(34, 197, 94, 0.18);
+}
+
+.about-btn:active{
+     transform: translateY(0) scale(0.97);
+     transition-duration: 100ms;
+}
+
+.about-btn .btn-whatsapp-icon{
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.about-btn:hover .btn-whatsapp-icon{
+     transform: rotate(-8deg) scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+     .about {
+          flex-direction: column-reverse;
+          gap: 3rem;
+     }
+
+     .about-divider {
+          display: none;
+     }
+
+     .about-eyebrow,
+     .about-right-title {
+          text-align: center;
+          max-width: none;
+     }
+
+     .about-right-content p.about-lead {
+          text-align: center;
+          max-width: none;
+     }
+
+     .about-options {
+          align-items: center;
+          text-align: center;
+     }
+
+     .about-options-list {
+          justify-content: center;
+     }
+
+     .about-price-card {
+          text-align: center;
+     }
+
+     .about-price-info {
+          justify-content: center;
+     }
+
+     .about-btn {
+          align-self: center;
+     }
+}
+
+/* ===== Petit smartphone (≤430px) =====
+   Le bouton d'action devient pleine largeur — plus simple à
+   atteindre et cohérent avec les autres CTA de la page sur mobile. */
+@media screen and (max-width: 430px) {
+     .about-btn {
+          width: 100%;
+          justify-content: center;
+     }
+
+     .about-features {
+          grid-template-columns: 1fr;
+     }
+
+     .about-left-content figure video{
+          aspect-ratio: 4/3;
+     }
+}
+
+/* ===== Apparition en cascade — liste de caractéristiques =====
+   Une fois la section révélée, chaque caractéristique apparaît avec
+   un léger décalage : le regard les parcourt une à une plutôt que
+   de les recevoir toutes en même temps. */
+.about-features li {
+     opacity: 0;
+     transform: translateY(14px);
+     transition: opacity var(--dur-reveal) var(--ease-out),
+                 transform var(--dur-reveal) var(--ease-out),
+                 background-color var(--dur-hover) var(--ease-standard);
+}
+
+.about.section-visible .about-features li {
+     opacity: 1;
+     transform: translateY(0);
+}
+
+.about.section-visible .about-features li:nth-child(1) { transition-delay: 0.05s, 0.05s, 0s; }
+.about.section-visible .about-features li:nth-child(2) { transition-delay: 0.12s, 0.12s, 0s; }
+.about.section-visible .about-features li:nth-child(3) { transition-delay: 0.19s, 0.19s, 0s; }
+.about.section-visible .about-features li:nth-child(4) { transition-delay: 0.26s, 0.26s, 0s; }
+
+@media (prefers-reduced-motion: reduce){
+     .about-features li{
+          opacity: 1;
+          transform: none;
+          transition: background-color var(--dur-hover) var(--ease-standard);
+     }
+}
+   
+   

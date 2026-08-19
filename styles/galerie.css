@@ -1,0 +1,347 @@
+/*===============================
+        SECTION GALERIE PRO
+===============================*/
+
+.galerie {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 3rem;
+     font-family: var(--font-text);
+}
+
+/* ===== TITRES ===== */
+.galerie-title {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     gap: 1rem;
+     width: 100%;
+     max-width: 800px;
+}
+
+.galerie-title h2 {
+     font-family: var(--font-heading);
+     font-size: clamp(1.6rem, 5vw, 2.4rem);
+     text-transform: uppercase;
+     color: var(--color-white);
+     font-weight: 500;
+}
+
+.galerie-title p {
+     font-size: clamp(1rem, 2.5vw, 1.3rem);
+     color: var(--color-gold);
+     font-style: italic;
+     font-weight: 400;
+}
+
+/* ===== GRILLE D'IMAGES — STYLE BENTO ===== */
+.galerie-content {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-auto-rows: clamp(140px, 16vw, 210px);
+     grid-auto-flow: dense;
+     gap: 1.25rem;
+     width: 100%;
+     max-width: 1300px;
+}
+
+/* Rythme "bento" qui se répète toutes les 6 images :
+   1 grande pièce, 1 normale, 1 verticale, 1 large, 2 normales */
+.galerie-image:nth-child(6n+1) {
+     grid-column: span 2;
+     grid-row: span 2;
+}
+
+.galerie-image:nth-child(6n+2) {
+     grid-column: span 1;
+     grid-row: span 1;
+}
+
+.galerie-image:nth-child(6n+3) {
+     grid-column: span 1;
+     grid-row: span 2;
+}
+
+.galerie-image:nth-child(6n+4) {
+     grid-column: span 2;
+     grid-row: span 1;
+}
+
+.galerie-image:nth-child(6n+5) {
+     grid-column: span 1;
+     grid-row: span 1;
+}
+
+.galerie-image:nth-child(6n+6) {
+     grid-column: span 1;
+     grid-row: span 1;
+}
+
+@media screen and (max-width: 900px) {
+     .galerie-content {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: clamp(150px, 32vw, 220px);
+     }
+
+     .galerie-image:nth-child(6n+1) {
+          grid-column: span 2;
+          grid-row: span 2;
+     }
+
+     .galerie-image:nth-child(6n+2),
+     .galerie-image:nth-child(6n+5),
+     .galerie-image:nth-child(6n+6) {
+          grid-column: span 1;
+          grid-row: span 1;
+     }
+
+     .galerie-image:nth-child(6n+3) {
+          grid-column: span 1;
+          grid-row: span 2;
+     }
+
+     .galerie-image:nth-child(6n+4) {
+          grid-column: span 2;
+          grid-row: span 1;
+     }
+}
+
+@media screen and (max-width: 560px) {
+     .galerie-content {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: clamp(130px, 40vw, 180px);
+          gap: 0.85rem;
+     }
+
+     .galerie-image,
+     .galerie-image:nth-child(6n+1),
+     .galerie-image:nth-child(6n+3),
+     .galerie-image:nth-child(6n+4) {
+          grid-column: span 1;
+          grid-row: span 1;
+     }
+}
+
+/* ===== Petit smartphone (≤375px) =====
+   Une seule colonne : sur un écran aussi étroit, deux colonnes
+   réduisent trop chaque photo pour rester lisible et agréable. */
+@media screen and (max-width: 375px) {
+     .galerie-content {
+          grid-template-columns: 1fr;
+          grid-auto-rows: clamp(190px, 68vw, 260px);
+          gap: 0.75rem;
+     }
+
+     .galerie-zoom-icon{
+          display: none;
+     }
+}
+
+/* ===== Apparition en cascade — grille photo =====
+   Les images se révèlent en petite cascade plutôt que d'un bloc :
+   ça donne du rythme à une grille par ailleurs statique, sans
+   jamais retarder la lecture (dernier délai sous 0,4s). */
+.galerie-image {
+     opacity: 0;
+     transform: translateY(16px);
+}
+
+.galerie.section-visible .galerie-image {
+     opacity: 1;
+     transform: translateY(0);
+     transition-delay: 0.32s, 0s, 0.32s;
+}
+
+.galerie.section-visible .galerie-image:nth-child(1) { transition-delay: 0.05s, 0s, 0.05s; }
+.galerie.section-visible .galerie-image:nth-child(2) { transition-delay: 0.09s, 0s, 0.09s; }
+.galerie.section-visible .galerie-image:nth-child(3) { transition-delay: 0.13s, 0s, 0.13s; }
+.galerie.section-visible .galerie-image:nth-child(4) { transition-delay: 0.17s, 0s, 0.17s; }
+.galerie.section-visible .galerie-image:nth-child(5) { transition-delay: 0.21s, 0s, 0.21s; }
+.galerie.section-visible .galerie-image:nth-child(6) { transition-delay: 0.25s, 0s, 0.25s; }
+.galerie.section-visible .galerie-image:nth-child(7) { transition-delay: 0.29s, 0s, 0.29s; }
+.galerie.section-visible .galerie-image:nth-child(8) { transition-delay: 0.32s, 0s, 0.32s; }
+
+@media (prefers-reduced-motion: reduce){
+     .galerie-image{
+          opacity: 1;
+          transform: none;
+     }
+}
+
+/* ===== CARTE IMAGE ===== */
+.galerie-image {
+     position: relative;
+     overflow: hidden;
+     border-radius: var(--radius-base);
+     background-color: var(--color-surface);
+     transition: transform var(--dur-hover) var(--ease-out),
+                 box-shadow var(--dur-hover) var(--ease-in-out),
+                 opacity var(--dur-reveal) var(--ease-out);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.galerie-image:hover{
+     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.galerie-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 500ms var(--ease-out);
+     display: block;
+     transform: scale(1);
+}
+
+.galerie-image:hover img {
+     transform: scale(1.08);
+}
+
+/* ===== Effet overlay créatif  ===== */
+.galerie-image::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.3));
+     transition: opacity var(--dur-hover) var(--ease-standard);
+     opacity: 0;
+}
+
+.galerie-image:hover::after {
+     opacity: 1;
+}
+
+.galerie-image {
+     cursor: pointer;
+}
+
+.galerie-image:focus-visible {
+     outline: 2px solid var(--color-gold);
+     outline-offset: 3px;
+}
+
+/* ===== Icône loupe au survol ===== */
+.galerie-zoom-icon {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%) scale(0.6) rotate(-8deg);
+     width: 56px;
+     height: 56px;
+     border-radius: var(--radius-circle);
+     background-color: rgba(23, 26, 26, 0.75);
+     border: 1px solid rgba(250, 204, 21, 0.55);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     transition: opacity var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-out);
+     pointer-events: none;
+     z-index: 2;
+}
+
+.galerie-zoom-icon svg {
+     width: 24px;
+     height: 24px;
+     stroke: var(--color-gold);
+}
+
+.galerie-image:hover .galerie-zoom-icon,
+.galerie-image:focus-visible .galerie-zoom-icon {
+     opacity: 1;
+     transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+     position: fixed;
+     inset: 0;
+     background-color: rgba(8, 9, 9, 0.94);
+     backdrop-filter: blur(6px);
+     -webkit-backdrop-filter: blur(6px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 3rem;
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease, visibility 0.3s ease;
+     z-index: 999;
+}
+
+.lightbox.active {
+     opacity: 1;
+     visibility: visible;
+}
+
+.lightbox-img {
+     max-width: 90vw;
+     max-height: 85vh;
+     width: auto;
+     height: auto;
+     border-radius: var(--radius-base);
+     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+     transform: scale(0.94);
+     transition: transform 0.35s ease;
+     object-fit: contain;
+}
+
+.lightbox.active .lightbox-img {
+     transform: scale(1);
+}
+
+.lightbox-close {
+     position: absolute;
+     top: 1.75rem;
+     right: 1.75rem;
+     width: 46px;
+     height: 46px;
+     border-radius: var(--radius-circle);
+     background-color: rgba(255, 255, 255, 0.08);
+     border: 1px solid rgba(255, 255, 255, 0.18);
+     color: var(--color-white);
+     font-size: 1.7rem;
+     line-height: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+     background-color: var(--color-gold);
+     border-color: var(--color-gold);
+     color: var(--bg-alt);
+     transform: rotate(90deg);
+}
+
+@media screen and (max-width: 600px) {
+     .lightbox {
+          padding: 1.25rem;
+     }
+
+     .lightbox-close {
+          top: 1rem;
+          right: 1rem;
+          width: 40px;
+          height: 40px;
+          font-size: 1.4rem;
+     }
+
+     .galerie-zoom-icon {
+          width: 44px;
+          height: 44px;
+     }
+
+     .galerie-zoom-icon svg {
+          width: 20px;
+          height: 20px;
+     }
+}
+   
+
+   

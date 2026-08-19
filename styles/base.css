@@ -1,0 +1,218 @@
+/*===========================
+BASE.CSS - Fondation du site Lumora
+=============================*/
+
+/*Variable CSS*/
+:root {
+     /* Police des titres (h1-h3, titres de section) */
+     --font-heading: 'Marcellus', serif;
+     /* Police du texte courant (paragraphes, liens, boutons, formulaires) */
+     --font-text: 'Jost', sans-serif;
+
+     /* Fonds de section — alternance de deux teintes proches du noir */
+     --bg-deep: #0f1111; /* teinte la plus profonde */
+     --bg-alt: #171a1a; /* teinte legerement plus claire */
+
+     /* Largeur du conteneur central — plus généreuse sur très grand écran */
+     --container-max: 1400px;
+     --container-pad: clamp(1rem, 0.5rem + 2.2vw, 2rem);
+
+     /* Zone tactile minimale recommandée (Apple HIG / WCAG) */
+     --tap-target: 44px;
+
+     /* ===== Langage de mouvement =====
+        Un seul vocabulaire d'animation pour toute l'interface : mêmes
+        courbes, mêmes durées, réutilisées partout pour que chaque
+        transition semble appartenir à la même main. */
+     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* sortie douce, sans rebond — révélations, entrées */
+     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* va-et-vient — survols, changements d'état */
+     --ease-standard: ease;                        /* transitions neutres (couleur, fond) */
+
+     --dur-hover: 200ms;    /* survols, icônes */
+     --dur-state: 250ms;    /* focus, validation, changements d'état */
+     --dur-reveal: 550ms;   /* apparitions, scroll reveal */
+
+     /* ===== Palette ===== =====
+        Chaque couleur de l'interface passe par un jeton nommé, plutôt
+        que d'être répétée en dur dans chaque fichier. Un changement de
+        teinte de marque ne demande plus qu'une seule ligne à modifier. */
+     --color-white: #ffffff;
+     --color-gold: #facc15;        /* accent principal — CTA, focus, liens actifs */
+     --color-gold-light: #ffe066;  /* survol des éléments dorés atténués (textes, icônes) */
+     --color-gold-dark: #eab308;   /* survol des boutons pleins dorés — plus riche, jamais délavé */
+     --color-gold-soft: #e3c17a;   /* accent doré atténué (textes, bordures fines) */
+     --color-bronze: #c58f2c;      /* bouton héros, séparateurs */
+     --color-bronze-dark: #b87f1d; /* survol du bouton héros */
+     --color-green: #22c55e;       /* CTA WhatsApp */
+     --color-green-dark: #16a34a;  /* survol du CTA WhatsApp */
+     --color-error: #f16565;       /* validation de formulaire */
+
+     --color-text: #d4d4d4;        /* texte principal sur fond sombre */
+     --color-text-muted: #b9bcbc;  /* texte secondaire */
+     --color-text-subtle: #8b8e8e; /* texte tertiaire, légendes */
+
+     --color-surface: #1c1f1f;     /* cartes / vignettes sur fond sombre */
+
+     /* ===== Rayons de bordure =====
+        Une échelle à deux crans seulement, jamais au-delà de 8px :
+        assez pour adoucir les angles, jamais assez pour que l'élément
+        se lise comme "arrondi" plutôt que rectangulaire. */
+     --radius-sm: 0.25rem;   /* petits contrôles (case à cocher) */
+     --radius-base: 0.5rem;  /* boutons, champs, cartes, images — valeur par défaut */
+     --radius-pill: 999px;   /* badges, filtres */
+     --radius-circle: 50%;   /* avatars, icônes rondes */
+}
+body{
+     background-color: var(--bg-deep);
+     color: #d4d4d4;
+}
+
+/* Très grands écrans (≥1600px) : le conteneur respire davantage
+   pour ne jamais donner une impression de contenu "perdu" au milieu
+   d'un écran large — sans jamais dépasser une longueur de ligne confortable. */
+@media screen and (min-width: 1600px) {
+     :root{
+          --container-max: 1560px;
+     }
+}
+
+/* ===== Alternance des fonds de section (hors hero) ===== */
+/* Ces sections recoivent la teinte "alt", les autres restent
+   sur le fond de base du body (--bg-deep), creant l'alternance. */
+.description,
+.temoignages,
+.pre-footer {
+     position: relative;
+     background-color: var(--bg-alt);
+     box-shadow: 0 0 0 100vmax var(--bg-alt);
+     clip-path: inset(0 -100vmax);
+}
+
+/*Conteneur central*/
+.main-wrapper{
+     width: 100%;
+     max-width: var(--container-max);
+     margin: 0 auto;
+     padding: 0 var(--container-pad);
+}
+
+/*Titres*/
+h1, h2, h3{
+     font-family: var(--font-heading);
+     font-weight: 500;
+     line-height: 1.25;
+     letter-spacing: 0.01em;
+}
+
+/*Paragraphes*/
+p{
+     font-family: var(--font-text);
+     font-weight: 400;
+     line-height: 1.7;
+}
+
+/*Buttons*/
+.btns{
+     font-family: var(--font-text);
+     border-radius: var(--radius-base);
+     font-weight: 500;
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 color var(--dur-hover) var(--ease-standard),
+                 border-color var(--dur-hover) var(--ease-standard),
+                 box-shadow var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-in-out);
+}
+
+/* Retour tactile immédiat à l'appui — confirme que le clic a été pris
+   en compte avant même la réaction du serveur/de la page suivante. */
+.btns:active{
+     transform: translateY(0) scale(0.97);
+     transition-duration: 100ms;
+}
+
+/*Liens*/
+nav li {
+     font-family: var(--font-text);
+     font-weight: 600;
+     cursor: pointer;
+}
+
+/* 📐 Section spacing — fluide, pour que les sections respirent davantage
+   sans casser la cohérence entre mobile et desktop */
+section, footer {
+     padding: clamp(3.5rem, 8vw, 6rem) 0;
+     width: 100%;
+     margin: 0 auto;
+}
+
+textarea{
+     resize: none;
+}
+
+/* Empêche le scroll de la page en arrière-plan pendant qu'un panneau
+   plein écran est ouvert (lightbox galerie ou menu mobile). */
+body.scroll-locked {
+     overflow: hidden;
+}
+
+/* ===== Accessibilité clavier ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+     outline: 2px solid #facc15;
+     outline-offset: 3px;
+}
+
+/* ===== Zones tactiles =====
+   Sur les écrans tactiles (mobile/tablette), les boutons principaux
+   respectent une hauteur minimale de 44px, conformément aux
+   recommandations WCAG / Apple HIG. */
+@media (hover: none) and (pointer: coarse) {
+     .btns {
+          min-height: var(--tap-target);
+     }
+}
+
+/* ===== Filet de sécurité — mouvement réduit =====
+   Au-delà des animations d'apparition (voir animation.css), toutes
+   les micro-interactions (survol, appui) qui déplacent ou mettent à
+   l'échelle un élément sont neutralisées ici. Les retours visuels
+   (couleur, ombre, bordure) restent actifs : l'utilisateur garde un
+   feedback clair, sans le mouvement qui peut le gêner. */
+@media (prefers-reduced-motion: reduce) {
+     *,
+     *::before,
+     *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+     }
+
+     .btns:hover,
+     .btns:active,
+     .hero-btn:hover,
+     .hero-btn:active,
+     .hero-btn-outline:hover,
+     .hero-btn-outline:active,
+     .about-btn:hover,
+     .about-btn:active,
+     .contact-btn:hover,
+     .contact-btn:active,
+     .btn-prefooter:hover,
+     .btn-prefooter:active,
+     .about-features li:hover img,
+     .contact-second-block-left address p:hover .contact-icon,
+     .about-price-card:hover,
+     .about-options-list li:hover,
+     .galerie-image:hover img,
+     .galerie-zoom-icon,
+     .temoignage-card:hover .tmg-quote-mark,
+     .temoignage-card:hover .tmg-profil-images,
+     .about-left-content figure.about-media:hover video,
+     .form-consent input[type="checkbox"]:active {
+          transform: none !important;
+     }
+}

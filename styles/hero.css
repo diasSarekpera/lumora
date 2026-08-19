@@ -1,0 +1,550 @@
+/*=====================
+     SECTION HEROTIQUE
+======================*/
+
+.hero{
+     position: relative;
+     min-height: 100dvh;   /* Utilise la hauteur dynamique du viewport */
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     gap: clamp(2.5rem, 2rem + 2vw, 4rem);
+     background-image: url('../assets/Pictures/banner.png');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     isolation: isolate;
+     padding: clamp(1.75rem, 1.2rem + 2.5vw, 4rem) clamp(1.25rem, 0.8rem + 2vw, 2rem);
+}
+
+.hero::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background:
+          linear-gradient(180deg, rgba(10, 9, 8, 0.6) 0%, rgba(10, 9, 8, 0) 20%),
+          linear-gradient(90deg, rgba(10, 9, 8, 0.8) 0%, rgba(10, 9, 8, 0.52) 34%, rgba(10, 9, 8, 0.2) 60%, rgba(10, 9, 8, 0) 80%),
+          linear-gradient(0deg, rgba(24, 16, 6, 0.55) 0%, rgba(24, 16, 6, 0) 28%);
+     z-index: -1;
+}
+
+.hero-content {
+     z-index: 2;
+}
+
+/* ===== Entrée en scène — révélation séquencée au chargement ===== */
+@keyframes heroReveal {
+     from { opacity: 0; transform: translateY(22px); }
+     to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow,
+.hero-content-title,
+.hero-content-infos,
+.hero-cta {
+     animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-eyebrow      { animation-delay: 0.05s; }
+.hero-content-title{ animation-delay: 0.2s; }
+.hero-content-infos{ animation-delay: 0.38s; }
+.hero-cta          { animation-delay: 0.52s; }
+
+@keyframes heroScrollCueReveal {
+     from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+     to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.hero-scroll-cue {
+     animation: heroScrollCueReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+     animation-delay: 0.9s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+     .hero-eyebrow,
+     .hero-content-title,
+     .hero-content-infos,
+     .hero-cta,
+     .hero-scroll-cue {
+          animation: none;
+     }
+}
+
+.hero header{
+     width: 100%;
+}
+
+.hero header nav{
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr auto 1fr;
+     align-items: center;
+     column-gap: 2rem;
+}
+
+.hero header nav .brand{
+     grid-column: 2;
+     justify-self: center;
+     width: auto;
+}
+
+.hero header nav .nav-links-left{
+     grid-column: 1;
+     justify-self: start;
+}
+
+.hero header nav .nav-links-right{
+     grid-column: 3;
+     justify-self: end;
+}
+
+.hero header nav .desktop-menu{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+}
+
+.hero header nav .desktop-menu ul{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: 2.75rem;
+}
+
+.hero header nav .mobile-menu{
+     display: none;
+     grid-column: 3;
+     justify-self: end;
+}
+
+.hero .hero-content{
+     width: 100%;
+     max-width: 780px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 1.75rem;
+     flex: 1;
+}
+
+/* ===== Eyebrow — étiquette de catégorie au-dessus du titre ===== */
+.hero-eyebrow{
+     display: flex;
+     align-items: center;
+     gap: 0.9rem;
+     margin: 0;
+     color: var(--color-gold-soft);
+     font-family: var(--font-text);
+     font-size: 0.78rem;
+     font-weight: 500;
+     letter-spacing: 0.28em;
+     text-transform: uppercase;
+}
+
+.hero-eyebrow-rule{
+     display: inline-block;
+     width: 2.5rem;
+     height: 1px;
+     background-color: currentColor;
+}
+
+/* ===== Fiche technique — modèle / prix ===== */
+.hero-content-infos{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 1rem 1.5rem;
+}
+
+.hero-spec{
+     display: flex;
+     flex-direction: column;
+     gap: 0.3rem;
+}
+
+.hero-spec-label{
+     font-size: 0.7rem;
+     font-weight: 500;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-spec-value{
+     font-family: var(--font-heading);
+     font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+     font-weight: 500;
+     color: var(--color-white);
+}
+
+.hero-spec-divider{
+     width: 1px;
+     align-self: stretch;
+     background-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-content-title,
+.hero-content-infos,
+.hero-cta{
+     width: 100%;
+     height: auto;
+}
+
+.hero-cta{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 1rem;
+}
+
+.hero-btn{
+     color: var(--color-white);
+     background-color: var(--color-bronze);
+     padding: 0.7rem 1.6rem;
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-in-out),
+                 box-shadow var(--dur-hover) var(--ease-in-out);
+     font-size: clamp(0.9rem, 3vw, 1.1rem);
+     font-family: var(--font-text);
+     font-weight: 400;
+}
+
+.hero-btn:hover {
+     background-color: var(--color-bronze-dark); /* Un doré plus foncé */
+     box-shadow: 0 6px 14px rgba(197, 143, 44, 0.2);
+}
+
+.hero-btn:active{
+     transform: scale(0.97);
+     box-shadow: 0 3px 10px rgba(197, 143, 44, 0.22);
+     transition-duration: 100ms;
+}
+
+.hero-btn-outline{
+     color: var(--color-white);
+     background-color: transparent;
+     border: 1px solid var(--color-white);
+     padding: 0.7rem 1.6rem;
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 border-color var(--dur-hover) var(--ease-standard),
+                 color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-in-out);
+     font-size: clamp(0.9rem, 3vw, 1.1rem);
+     font-family: var(--font-text);
+     font-weight: 400;
+}
+
+.hero-btn-outline:hover {
+     background-color: rgba(255, 255, 255, 0.12);
+     border-color: var(--color-bronze);
+     color: var(--color-bronze);
+}
+
+.hero-btn-outline:active{
+     transform: scale(0.97);
+     transition-duration: 100ms;
+}
+
+.brand-name{
+     font-size: clamp(1.8rem, 4vw, 2.3rem);
+     font-weight: 500;
+     line-height: 1.25;
+     letter-spacing: 0.01em;
+     font-family: var(--font-heading);
+     text-transform: uppercase;
+     color: var(--color-white);
+}
+
+nav ul li a{
+     position: relative;
+     display: inline-block;
+     font-weight: 500;
+     font-family: var(--font-text);
+     font-size: 1rem;
+     transition: color var(--dur-hover) var(--ease-standard);
+}
+
+/* ===== Soulignement animé =====
+   Le trait part du centre et se déploie vers les bords au survol :
+   plus vivant qu'un simple fondu, tout en restant discret. */
+nav ul li a::after{
+     content: "";
+     position: absolute;
+     left: 50%;
+     bottom: -4px;
+     width: 100%;
+     height: 1px;
+     background-color: var(--color-bronze);
+     transform: translateX(-50%) scaleX(0);
+     transform-origin: center;
+     transition: transform var(--dur-hover) var(--ease-out);
+}
+
+nav ul li a:hover{
+     color: var(--color-bronze);
+}
+
+nav ul li a:hover::after{
+     transform: translateX(-50%) scaleX(1);
+}
+
+.hero-content-title h1{
+     font-size: clamp(2.2rem, 6vw, 4.4rem);
+     font-family: var(--font-heading);
+     font-weight: 500;
+     line-height: 1.1;
+     color: var(--color-white);
+     text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===== Repère de scroll — discret, en pied de hero ===== */
+.hero-scroll-cue{
+     position: absolute;
+     bottom: 1.3rem;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 2;
+     display: flex;
+     justify-content: center;
+     padding: 0.7rem;
+}
+
+.hero-scroll-cue-track{
+     position: relative;
+     display: block;
+     width: 1px;
+     height: 3.2rem;
+     background-color: rgba(255, 255, 255, 0.3);
+     overflow: hidden;
+}
+
+.hero-scroll-cue-track::after{
+     content: "";
+     position: absolute;
+     top: -100%;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: var(--color-gold-soft);
+     animation: heroScrollCue 2.2s ease-in-out infinite;
+}
+
+@keyframes heroScrollCue{
+     0%   { top: -100%; }
+     60%  { top: 100%; }
+     100% { top: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce){
+     .hero-scroll-cue-track::after{
+          animation: none;
+          top: 0;
+     }
+}
+
+/* ===== Petit laptop / grande tablette (1024px → 901px) =====
+   La navigation desktop tient encore, mais l'espace est plus rare :
+   on resserre les gaps avant de basculer sur le menu mobile. */
+@media screen and (max-width: 1180px) {
+     .hero header nav{
+          column-gap: 1.25rem;
+     }
+
+     .hero header nav .desktop-menu ul{
+          gap: 1.6rem;
+     }
+
+     .brand h1{
+          font-size: clamp(1.6rem, 2.6vw, 2rem);
+     }
+
+     nav ul li a{
+          font-size: 0.92rem;
+     }
+}
+
+/* Affichage du menu mobile */
+@media screen and (max-width: 900px) {
+     .hero header nav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+     }
+
+     .hero header nav .desktop-menu{
+          display: none;
+     }
+
+     .hero header nav .brand{
+          justify-self: initial;
+     }
+
+     .hero header nav .mobile-menu {
+          display: flex;
+          align-items: center;
+          position: relative;
+          z-index: 1001;
+     }
+
+     /* ==== Bouton burger — orienté vers la gauche ====
+        La zone cliquable respecte 44×44px (padding invisible autour
+        des barres, qui elles gardent leur taille visuelle d'origine). */
+     .hero header nav .mobile-menu .menu-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          gap: 6px;
+          width: 44px;
+          height: 44px;
+          background: none;
+          border: none;
+          padding: 10px 0;
+          margin: -10px -6px -10px 0;
+          cursor: pointer;
+     }
+
+     .burger-bar {
+          display: block;
+          height: 2px;
+          border-radius: 2px;
+          background-color: var(--color-white);
+          transition: transform 0.35s ease, opacity 0.3s ease, width 0.35s ease;
+     }
+
+     .burger-bar--1 { width: 28px; }
+     .burger-bar--2 { width: 20px; }
+     .burger-bar--3 { width: 14px; }
+
+     /* ==== État actif : transformation douce en croix ==== */
+     .menu-btn.active .burger-bar {
+          width: 26px;
+     }
+
+     .menu-btn.active .burger-bar--1 {
+          transform: translateY(8px) rotate(-45deg);
+     }
+
+     .menu-btn.active .burger-bar--2 {
+          opacity: 0;
+          transform: translateX(6px);
+     }
+
+     .menu-btn.active .burger-bar--3 {
+          transform: translateY(-8px) rotate(45deg);
+     }
+
+     /* ==== Overlay plein écran du menu mobile ====
+        Apparition progressive (fondu + léger zoom), jamais brutale. */
+     .mobile-nav-overlay {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(12, 14, 14, 0.97);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0.45s;
+          z-index: 1000;
+     }
+
+     .mobile-nav-overlay.active {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+     }
+
+     .mobile-nav-overlay ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.9rem;
+          list-style: none;
+          transform: translateY(14px);
+          opacity: 0;
+          transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.05s,
+                      opacity 0.45s ease 0.05s;
+     }
+
+     .mobile-nav-overlay.active ul {
+          transform: translateY(0);
+          opacity: 1;
+     }
+
+     .mobile-nav-overlay ul li a {
+          font-family: var(--font-heading);
+          font-size: clamp(1.4rem, 5vw, 1.8rem);
+          font-weight: 500;
+          letter-spacing: 0.02rem;
+          color: var(--color-white);
+          transition: color 0.3s ease;
+     }
+
+     .mobile-nav-overlay ul li a:hover {
+          color: var(--color-gold);
+     }
+}
+
+@media screen and (max-width: 600px), (max-height: 700px) {
+     .hero-scroll-cue{
+          display: none;
+     }
+}
+
+/* ===== Grand smartphone (576px) et en dessous =====
+   La fiche modèle/prix passe sur deux lignes : le séparateur vertical
+   n'a alors plus de sens et est retiré pour éviter un trait flottant. */
+@media screen and (max-width: 576px) {
+     .hero{
+          gap: 2.25rem;
+          align-items: stretch;
+     }
+
+     .hero-content-infos{
+          gap: 1.1rem 1.75rem;
+     }
+
+     .hero-spec-divider{
+          display: none;
+     }
+
+     .hero-content-title h2{
+          max-width: 14ch;
+     }
+}
+
+/* ===== Smartphone standard et petit smartphone (≤430px) =====
+   Les CTA passent en pleine largeur, empilés : plus faciles à
+   atteindre au pouce et plus lisibles qu'une paire de boutons serrés. */
+@media screen and (max-width: 430px) {
+     .hero-cta{
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.85rem;
+     }
+
+     .hero-btn,
+     .hero-btn-outline{
+          justify-content: center;
+          text-align: center;
+          padding: 0.85rem 1.4rem;
+     }
+
+     .hero-eyebrow{
+          font-size: 0.7rem;
+          letter-spacing: 0.22em;
+     }
+}
+

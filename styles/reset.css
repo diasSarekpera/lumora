@@ -1,0 +1,58 @@
+/*========================
+     RESET CSS DE BASE
+=========================*/
+
+*,
+*::before,
+*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+html{
+     scroll-behavior: smooth;
+     overflow-x: hidden;
+     width: 100%;
+}
+
+body{
+     line-height: 1.6;
+     font-family: var(--font-text, 'Jost', sans-serif);
+     background-color: #fff;
+     color: #111;
+     -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg{
+     display: block;
+     max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select{
+     font: inherit;
+     outline: none;
+     border: none;
+     background: none;
+}
+
+a{
+     text-decoration: none;
+     color: inherit;
+}
+
+ol,
+ul{
+     list-style: none;
+}
+
+button{
+     cursor: pointer;
+}

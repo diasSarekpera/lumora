@@ -1,0 +1,503 @@
+/*===============================
+         SECTION CONTACT
+===============================*/
+
+.contact {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     font-family: var(--font-text);
+}
+
+/* ==== LAYOUT DEUX BLOCS ==== */
+.contact-second-block {
+     display: grid;
+     grid-template-columns: 0.85fr 1.15fr;
+     gap: 0;
+     width: 100%;
+     max-width: 1200px;
+     border-radius: var(--radius-base);
+     overflow: hidden;
+     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Petit laptop (1024px) =====
+   Les deux blocs tiennent encore côte à côte, mais avec un padding
+   interne réduit pour laisser plus de place au contenu. */
+@media screen and (max-width: 1180px) {
+     .contact-second-block-left,
+     .contact-second-block-right {
+          padding: 2.6rem 2rem;
+     }
+}
+
+/* ============================================
+   BLOC GAUCHE — Coordonnées / présentation
+   ============================================ */
+.contact-second-block-left {
+     position: relative;
+     background-color: var(--bg-alt);
+     background-image: none;
+     padding: 3rem 2.5rem;
+     display: flex;
+     flex-direction: column;
+     gap: 1.75rem;
+     overflow: hidden;
+}
+
+.contact-eyebrow {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.6rem;
+     font-family: var(--font-text);
+     font-size: 0.8rem;
+     font-weight: 600;
+     letter-spacing: 0.12rem;
+     text-transform: uppercase;
+     color: var(--color-gold);
+}
+
+.contact-eyebrow::before {
+     content: "";
+     display: inline-block;
+     width: 1.6rem;
+     height: 1px;
+     background-color: var(--color-gold);
+}
+
+.contact-second-block-left h2 {
+     font-family: var(--font-heading);
+     font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+     font-weight: 500;
+     line-height: 1.25;
+     color: var(--color-white);
+}
+
+.contact-second-block-left h2 em {
+     color: var(--color-gold);
+     font-style: italic;
+}
+
+.contact-intro {
+     font-size: 0.98rem;
+     line-height: 1.7;
+     color: var(--color-text-muted);
+     max-width: 34rem;
+}
+
+/* ==== COORDONNÉES ==== */
+.contact-second-block-left address {
+     display: flex;
+     flex-direction: column;
+     gap: 1.1rem;
+     font-style: normal;
+     margin-top: 0.5rem;
+}
+
+.contact-second-block-left address p {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     color: #eaeaea;
+     font-size: 0.95rem;
+}
+
+.contact-second-block-left address p strong {
+     display: block;
+     font-family: var(--font-heading);
+     font-size: 0.72rem;
+     font-weight: 500;
+     letter-spacing: 0.06rem;
+     text-transform: uppercase;
+     color: var(--color-text-subtle);
+     margin-bottom: 0.15rem;
+}
+
+.contact-icon {
+     flex-shrink: 0;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: var(--radius-circle);
+     background-color: rgba(255, 255, 255, 0.04);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     transition: border-color var(--dur-hover) var(--ease-standard),
+                 background-color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-out);
+}
+
+.contact-icon svg {
+     width: 18px;
+     height: 18px;
+     stroke: var(--color-text-muted);
+     transition: stroke var(--dur-hover) var(--ease-standard);
+}
+
+.contact-second-block-left address p:hover .contact-icon {
+     border-color: rgba(250, 204, 21, 0.35);
+     background-color: rgba(250, 204, 21, 0.06);
+     transform: scale(1.06) rotate(-6deg);
+}
+
+.contact-second-block-left address p:hover .contact-icon svg {
+     stroke: var(--color-gold);
+}
+
+/* ============================================
+   BLOC DROIT — Formulaire
+   ============================================ */
+.contact-second-block-right {
+     background-color: #101313;
+     padding: 3rem 2.5rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.4rem;
+}
+
+.contact-second-block-right h3 {
+     font-family: var(--font-heading);
+     font-size: 1.3rem;
+     font-weight: 500;
+     color: var(--color-white);
+}
+
+.form-helper {
+     font-size: 0.85rem;
+     color: var(--color-text-subtle);
+     margin-bottom: 1.6rem;
+}
+
+.form-helper span {
+     color: var(--color-gold);
+}
+
+.contact-second-block-right form {
+     display: flex;
+     flex-direction: column;
+     gap: 1.4rem;
+}
+
+.form-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 1.4rem;
+}
+
+.form-wrapper {
+     display: flex;
+     flex-direction: column;
+     gap: 0.55rem;
+}
+
+.form-wrapper label {
+     font-family: var(--font-text);
+     font-size: 0.8rem;
+     font-weight: 600;
+     letter-spacing: 0.03rem;
+     color: var(--color-text);
+     transition: color var(--dur-hover) var(--ease-standard);
+}
+
+.form-wrapper:focus-within label{
+     color: var(--color-gold);
+}
+
+.form-wrapper label span {
+     color: var(--color-gold);
+}
+
+/* ==== INPUTS, SELECT & TEXTAREA ==== */
+input,
+select,
+textarea {
+     background-color: rgba(255, 255, 255, 0.045);
+     border: 1px solid rgba(255, 255, 255, 0.09);
+     padding: 0.85rem 1rem;
+     border-radius: var(--radius-sm);
+     font-size: 0.95rem;
+     color: var(--color-white);
+     font-family: var(--font-text);
+     transition: border-color var(--dur-state) var(--ease-standard);
+}
+
+input::placeholder,
+textarea::placeholder {
+     color: #71736f;
+}
+
+/* ==== SUPPRESSION DU FOND BLANC IMPOSÉ PAR L'AUTOREMPLISSAGE ====
+   Les navigateurs (Chrome, Edge, Safari) appliquent un fond blanc
+   opaque en interne dès qu'un champ est auto-rempli. On le neutralise
+   avec un box-shadow "inset" de la même couleur que notre champ,
+   couplé à un forçage de la couleur du texte. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:active {
+     -webkit-text-fill-color: var(--color-white);
+     caret-color: var(--color-white);
+     -webkit-box-shadow: 0 0 0 1000px #16181a inset;
+     box-shadow: 0 0 0 1000px #16181a inset;
+     border-color: rgba(255, 255, 255, 0.09);
+     transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus,
+select:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+     -webkit-text-fill-color: var(--color-white);
+     caret-color: var(--color-white);
+     -webkit-box-shadow: 0 0 0 1000px #16181a inset;
+     box-shadow: 0 0 0 1000px #16181a inset;
+     border-color: var(--color-gold);
+     transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox n'utilise pas -webkit-autofill : on neutralise via l'apparence native */
+input:autofill,
+textarea:autofill {
+     box-shadow: 0 0 0 1000px #16181a inset;
+     -webkit-text-fill-color: var(--color-white);
+}
+
+select {
+     appearance: none;
+     -webkit-appearance: none;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23facc15' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: right 1rem center;
+     cursor: pointer;
+}
+
+select option {
+     background-color: var(--bg-alt);
+     color: var(--color-white);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+     outline: none;
+     border-color: var(--color-gold);
+}
+
+/* Neutralise l'anneau de focus global (voir base.css) sur les champs :
+   la couleur de bordure suffit à signaler l'état actif, sans halo
+   supplémentaire autour du champ. */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+     outline: none;
+}
+
+textarea {
+     resize: vertical;
+     min-height: 120px;
+}
+
+/* ==== VALIDATION ====
+   Le champ ne signale une erreur qu'une fois que l'utilisateur l'a
+   quitté ou a tenté d'envoyer le formulaire (classe ajoutée par le
+   JS) — jamais pendant la première frappe, qui serait prématurée
+   et anxiogène. */
+.form-wrapper.field-invalid input,
+.form-wrapper.field-invalid select,
+.form-wrapper.field-invalid textarea {
+     border-color: var(--color-error);
+     background-color: rgba(241, 101, 101, 0.06);
+     animation: fieldShake 320ms var(--ease-in-out);
+}
+
+.form-wrapper.field-invalid input:focus,
+.form-wrapper.field-invalid select:focus,
+.form-wrapper.field-invalid textarea:focus {
+     box-shadow: 0 0 0 3px rgba(241, 101, 101, 0.18);
+}
+
+@keyframes fieldShake {
+     0%, 100% { transform: translateX(0); }
+     25%      { transform: translateX(-4px); }
+     75%      { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce){
+     .form-wrapper.field-invalid input,
+     .form-wrapper.field-invalid select,
+     .form-wrapper.field-invalid textarea {
+          animation: none;
+     }
+}
+
+/* ==== CONSENTEMENT ==== */
+.form-consent {
+     display: flex;
+     align-items: flex-start;
+     gap: 0.7rem;
+}
+
+.form-consent input[type="checkbox"] {
+     appearance: none;
+     -webkit-appearance: none;
+     width: 18px;
+     height: 18px;
+     flex-shrink: 0;
+     margin-top: 0.15rem;
+     border-radius: var(--radius-sm);
+     border: 1px solid rgba(255, 255, 255, 0.25);
+     background-color: rgba(255, 255, 255, 0.04);
+     cursor: pointer;
+     position: relative;
+     padding: 0;
+     transition: background-color var(--dur-state) var(--ease-standard),
+                 border-color var(--dur-state) var(--ease-standard),
+                 transform 150ms var(--ease-out);
+}
+
+.form-consent input[type="checkbox"]:active{
+     transform: scale(0.9);
+}
+
+.form-consent input[type="checkbox"]:checked {
+     background-color: var(--color-gold);
+     border-color: var(--color-gold);
+}
+
+.form-consent input[type="checkbox"]:checked::after {
+     content: "";
+     position: absolute;
+     left: 5px;
+     top: 1px;
+     width: 5px;
+     height: 9px;
+     border: solid var(--bg-alt);
+     border-width: 0 2px 2px 0;
+     transform: rotate(45deg) scale(1);
+     animation: checkPop 200ms var(--ease-out);
+}
+
+@keyframes checkPop {
+     from { transform: rotate(45deg) scale(0); }
+     to   { transform: rotate(45deg) scale(1); }
+}
+
+.form-consent label {
+     font-size: 0.82rem;
+     line-height: 1.55;
+     color: #a9acac;
+}
+
+.form-consent.field-invalid input[type="checkbox"] {
+     border-color: var(--color-error);
+     animation: fieldShake 320ms var(--ease-in-out);
+}
+
+@media (prefers-reduced-motion: reduce){
+     .form-consent.field-invalid input[type="checkbox"] {
+          animation: none;
+     }
+}
+
+/* ==== BOUTON & NOTE ==== */
+.form-submit-row {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 1.2rem;
+     margin-top: 0.4rem;
+}
+
+.contact-btn {
+     background-color: var(--color-gold);
+     color: var(--bg-alt);
+     font-weight: 600;
+     font-size: 0.95rem;
+     padding: 1rem 2.2rem;
+     border-radius: var(--radius-sm);
+     border: none;
+     cursor: pointer;
+     transition: background-color var(--dur-hover) var(--ease-standard),
+                 transform var(--dur-hover) var(--ease-in-out),
+                 box-shadow var(--dur-hover) var(--ease-in-out);
+     font-family: var(--font-text);
+     letter-spacing: 0.02rem;
+}
+
+.contact-btn:hover {
+     /* Un doré plus riche et plus profond au survol, comme les autres
+        CTA (bronze/vert) — jamais un ton plus clair, qui délave la
+        couleur au lieu de la renforcer. */
+     background-color: var(--color-gold-dark);
+     transform: translateY(-2px);
+     box-shadow: 0 6px 14px rgba(250, 204, 21, 0.18);
+}
+
+.contact-btn:active {
+     transform: translateY(0) scale(0.97);
+     transition-duration: 100ms;
+}
+
+.contact-btn:disabled{
+     opacity: 0.7;
+     cursor: wait;
+     transform: none;
+}
+
+.form-note {
+     font-size: 0.8rem;
+     color: #7d807f;
+}
+
+/* ==== RESPONSIVE ==== */
+@media screen and (max-width: 900px) {
+     .contact-second-block {
+          grid-template-columns: 1fr;
+     }
+
+     .contact-second-block-left,
+     .contact-second-block-right {
+          padding: 2.4rem 1.6rem;
+     }
+}
+
+@media screen and (max-width: 640px) {
+     .form-grid {
+          grid-template-columns: 1fr;
+     }
+
+     .contact-btn {
+          width: 100%;
+          text-align: center;
+     }
+
+     .contact-second-block-left address p img,
+     .contact-icon {
+          width: 38px;
+          height: 38px;
+     }
+}
+
+/* ===== Smartphone standard et petit smartphone (≤430px) =====
+   Le bouton devient pleine largeur pour un pouce plus à l'aise. */
+@media screen and (max-width: 430px) {
+     .contact-second-block-left,
+     .contact-second-block-right {
+          padding: 2rem 1.25rem;
+     }
+
+     .form-submit-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.9rem;
+     }
+
+     .form-note {
+          text-align: center;
+     }
+}
