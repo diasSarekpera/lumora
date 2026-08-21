@@ -114,7 +114,7 @@ p{
 /*Buttons*/
 .btns{
      font-family: var(--font-text);
-     border-radius: var(--radius-base);
+     border-radius: var(--radius-sm);
      font-weight: 500;
      transition: background-color var(--dur-hover) var(--ease-standard),
                  color var(--dur-hover) var(--ease-standard),

@@ -265,7 +265,7 @@
      background-color: var(--color-green);
      color: var(--color-white);
      padding: 0.8rem 1.8rem;
-     border-radius: var(--radius-base);
+     border-radius: var(--radius-sm);
      font-weight: 500;
      font-size: 1rem;
      font-family: var(--font-text);
